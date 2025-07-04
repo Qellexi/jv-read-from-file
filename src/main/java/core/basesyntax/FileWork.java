@@ -30,7 +30,9 @@ public class FileWork {
                     resultList.add(word);
                 }
             }
-            return resultList.toArray(new String[0]);
+            String[] resultArray = resultList.toArray(new String[0]);
+            Arrays.sort(resultArray);
+            return resultArray;
         } catch (IOException e) {
             throw new RuntimeException("Can't read file", e);
         }
