@@ -21,10 +21,12 @@ public class FileWork {
             reader.close();
 
             String resultString = builder.toString();
-            String[] words = resultString.split(" ");
+            String[] words = resultString.split("\\s+");
             List<String> resultList = new ArrayList<>();
             for (String word: words) {
+                word = word.replaceAll("[^a-zA-Z]", "");
                 if (word.startsWith("w") || word.startsWith("W")) {
+                    word = word.toLowerCase();
                     resultList.add(word);
                 }
             }
